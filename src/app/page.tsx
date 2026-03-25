@@ -18,6 +18,8 @@ import {
   FaShieldAlt,
   FaCheckCircle,
   FaAward,
+  FaCode,
+  FaExternalLinkAlt,
 } from "react-icons/fa";
 import { ReactTyped } from "react-typed";
 import {
@@ -110,6 +112,7 @@ const Home = () => {
         <NavItem href="#about" icon={<FaUser size={22} />} text="About" download={false} />
         <NavItem href="#experience" icon={<FaBriefcase size={22} />} text="Experience" download={false} />
         <NavItem href="#education" icon={<FaGraduationCap size={22} />} text="Education" download={false} />
+        <NavItem href="#projects" icon={<FaCode size={22} />} text="Projects" download={false} />
         <NavItem href="#skills" icon={<FaBrain size={22} />} text="Skills" download={false} />
         <NavItem href="#certification" icon={<FaCertificate size={22} />} text="Certifications" download={false} />
         <NavItem href="#contact" icon={<FaEnvelope size={22} />} text="Contact" download={false} />
@@ -280,6 +283,89 @@ const Home = () => {
                   "Maintained backup and disaster recovery protocols ensuring <4-hour RTO for critical systems.",
                 ]}
               />
+            </div>
+          </section>
+
+          {/* ── PROJECTS SECTION ── */}
+          <section
+            id="projects"
+            className="p-10 md:p-30 flex flex-col justify-between"
+          >
+            <div className="flex flex-col items-center">
+              <h1 className="text-3xl font-bold text-center mb-6">Projects</h1>
+              <hr className="w-1/3 md:w-1/4 border-t-2 border-[#fd8439] mb-6 mx-auto rounded-lg transition-all duration-300 hover:border-[#fd8439]" />
+
+              <div className="flex flex-wrap gap-6 justify-center mt-4 w-full max-w-5xl">
+
+                {/* Project 1 — InfraWatch */}
+                <div className="w-full lg:w-[48%] p-6 bg-[#2a2a2a] rounded-xl flex flex-col gap-4 group relative transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#fd8439]/40 border border-[#fd8439]/30">
+                  <div className="flex items-start justify-between gap-3">
+                    <div>
+                      <h2 className="text-xl font-bold text-white">InfraWatch</h2>
+                      <p className="text-[#fd8439] text-sm font-semibold mt-0.5">Automated SQL DBA &amp; Server Management Dashboard</p>
+                      <p className="text-gray-400 text-xs mt-1">Oct 2025 – Mar 2026 · Associated with eClerx</p>
+                    </div>
+                    <div className="flex items-center gap-2 text-gray-400 text-xs mt-1 whitespace-nowrap">
+                      <FaServer size={14} className="text-[#fd8439]" />
+                      <span>Internal Tool</span>
+                    </div>
+                  </div>
+
+                  <p className="text-gray-300 text-sm leading-relaxed">
+                    Designed and solely developed a full-stack internal web application that automates complex SQL Server DBA operations, Windows and Linux Server management tasks.
+                  </p>
+
+                  <ul className="list-disc pl-5 space-y-1.5 text-sm text-gray-300">
+                    <li>Built a high-performance <strong className="text-white">Python/FastAPI</strong> backend for asynchronous SQL management across multiple remote environments.</li>
+                    <li>Engineered a background job system for long-running tasks like cross-server <strong className="text-white">.bak file transfers</strong> via WinRM robocopy, database restores, and TempDB shrinks.</li>
+                    <li>Developed a responsive frontend using <strong className="text-white">Vanilla JS/CSS</strong> to monitor live SQL queries, track DB file capacities, and kill deadlocked sessions.</li>
+                    <li>Designed a <strong className="text-white">zero-downtime CI/CD pipeline</strong> using GitHub Actions and self-hosted Windows runners deploying to an NSSM Windows Service.</li>
+                    <li>Significantly reduced manual DBA overhead with an intuitive GUI for FULL/DIFF/LOG backups and active job monitoring.</li>
+                  </ul>
+
+                  <div className="flex flex-wrap gap-2 mt-2">
+                    {["Python", "FastAPI", "SQL Server", "CI/CD", "GitHub Actions", "Windows Server", "Linux Server"].map((tag) => (
+                      <span key={tag} className="text-xs px-2.5 py-1 rounded-full bg-[#fd8439]/10 text-orange-300 border border-[#fd8439]/30">{tag}</span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Project 2 — BillBuddies */}
+                <div className="w-full lg:w-[48%] p-6 bg-[#2a2a2a] rounded-xl flex flex-col gap-4 group relative transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#fd8439]/40 border border-[#fd8439]/30">
+                  <div className="flex items-start justify-between gap-3">
+                    <div>
+                      <h2 className="text-xl font-bold text-white">BillBuddies</h2>
+                      <p className="text-[#fd8439] text-sm font-semibold mt-0.5">Online Bill Splitting & Expense Tracker</p>
+                    </div>
+                    <a
+                      href="https://billbuddies.online"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1 text-xs text-[#fd8439] hover:text-orange-300 transition-colors mt-1 whitespace-nowrap"
+                    >
+                      <FaExternalLinkAlt size={12} />
+                      <span>Live Site</span>
+                    </a>
+                  </div>
+
+                  <p className="text-gray-300 text-sm leading-relaxed">
+                    A web application for splitting bills and tracking shared expenses among groups — making it easy to manage who owes what.
+                  </p>
+
+                  <div className="mt-auto">
+                    <a
+                      href="https://billbuddies.online"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-4 py-2 bg-[#fd8439] text-black text-sm font-bold rounded-full hover:bg-orange-400 transition-all duration-300"
+                    >
+                      <FaExternalLinkAlt size={12} />
+                      Visit BillBuddies
+                    </a>
+                  </div>
+                </div>
+
+              </div>
             </div>
           </section>
 
